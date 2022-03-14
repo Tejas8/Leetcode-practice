@@ -1,46 +1,35 @@
 class Solution {
 public:
     string simplifyPath(string path) {
-        
-        stack<string> st;
-        string res;
-        
-        for(int i = 0;  i<path.size(); ++i)
-        {
-            if(path[i] == '/')    
-                continue;
-            string temp;
-	
-            while(i < path.size() && path[i] != '/')
-            {
-			
-                temp += path[i];
-                ++i;
+      stack<string>s;
+      string res="";
+      for(int i=0;i<path.size();i++){
+        if(path[i]=='/')
+          continue;
+      
+          string temp="";
+          while(i<path.size()&&path[i]!='/'){
+            temp.push_back(path[i]);
+            i++;
+          }
+          cout<<temp<<endl;
+          if(temp==".") continue;
+          else if(temp==".."){
+            if(!s.empty()){
+              s.pop();
             }
-            if(temp == ".")
-                continue;
-			
-            else if(temp == "..")
-            {
-                if(!st.empty())
-                    st.pop();
-            }
-            else
-			
-                st.push(temp);
-        }
+          }else{
+            s.push(temp);
+          }
         
-		
-        while(!st.empty())
-        {
-            res = "/" + st.top() + res;
-            st.pop();
-        }
-        
-	
-        if(res.size() == 0)
-            return "/";
-        
+      }
+      while(!s.empty()){
+        res="/"+s.top()+res;
+        s.pop();
+      }
+      if(res.size()==0){
+        res="/";
+      }
         return res;
     }
 };
