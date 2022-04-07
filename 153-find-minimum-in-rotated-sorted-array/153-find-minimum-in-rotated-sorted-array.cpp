@@ -14,6 +14,6 @@ public:
           st=mid+1;
         }
       }
-      return nums[st];
+      return nums[end];
     }
 };
