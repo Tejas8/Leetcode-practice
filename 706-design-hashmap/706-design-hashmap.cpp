@@ -1,7 +1,7 @@
 class MyHashMap {
 public:vector<int>v;
     MyHashMap() {
-        v=vector<int>(10000000,-1);
+        v=vector<int>(1000001,-1);
     }
     
     void put(int key, int value) {
