@@ -15,6 +15,7 @@ public:
         if(!root) return;
         if(!root->left&&!root->right) return;
         if(root->left){
+            flatten(root->left);
         TreeNode* temp=root->right;
         root->right=root->left;
         root->left=NULL;
