@@ -21,7 +21,7 @@ public:
     TreeNode* fun(vector<int>& in, vector<int>& po,int st,int end){
         if(p<0||st>end)return NULL;
         int ind=find(po[p],in);
-        --p;
+        p--;
         TreeNode* root=new TreeNode(in[ind]);
         if(st==end)return root;
         root->right=fun(in,po,ind+1,end);
