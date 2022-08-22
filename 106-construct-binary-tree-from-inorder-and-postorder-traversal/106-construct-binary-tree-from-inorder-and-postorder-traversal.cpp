@@ -30,7 +30,6 @@ public:
     }
     TreeNode* buildTree(vector<int>& in, vector<int>& po) {
          p=po.size()-1;
-        int end=in.size()-1;
-        return fun(in,po,0,end);
+        return fun(in,po,0,in.size()-1);
     }
 };
