@@ -14,7 +14,7 @@ public:
         }
         cout<<nbyte<<endl;
         if(nbyte==0)nbyte=1;
-        else if(nbyte==1||nbyte-1>(int)data.size()-1-cnt||nbyte>4) return false; 
+        else if(nbyte==1||nbyte+cnt>(int)data.size()||nbyte>4) return false; 
             cnt+=1;
             int p=cnt-1;
         for(int i=cnt;i<=p+nbyte-1;i++){
