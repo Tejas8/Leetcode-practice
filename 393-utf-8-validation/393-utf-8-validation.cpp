@@ -7,8 +7,7 @@ public:
          nbyte=0;
          temp=data[cnt];
         for(int i=7;i>=0;i--){
-         k=1;
-            k<<=i;
+         k=1<<i;
             if(temp&k)nbyte++;
             else break;
         }
@@ -20,8 +19,7 @@ public:
             temp=data[i];
              byte=0;
             for(int j=7;j>=0;j--){
-             k=1;
-            k<<=j;
+             k=1<<j;
             if(temp&k)byte++;
             else break;
                 cnt++;
