@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<int> findOriginalArray(vector<int>& c) {
-        int cnt0=0;
         vector<int>res;
         unordered_map<int,int>m;
         sort(c.begin(),c.end());
