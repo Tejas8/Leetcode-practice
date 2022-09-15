@@ -9,9 +9,6 @@ public:
             if(i%2==0&&m[i/2]>0){
                 res.push_back(i/2);
                 m[i/2]--;
-            }else if(m[2*i]>0){
-                res.push_back(i);
-                m[2*i]--;
             }else{
                 m[i]++;
             }
