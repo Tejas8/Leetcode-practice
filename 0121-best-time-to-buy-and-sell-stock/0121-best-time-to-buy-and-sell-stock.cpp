@@ -1,15 +1,23 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
-        if(prices.size()==1||prices.size()==1) return 0;
+    int maxProfit(vector<int>& p) {
         int ans=0;
-        int l=prices[prices.size()-1];
-        for(int  i=prices.size()-2;i>=0;i--){
-            if(prices[i]>l){
-                l=prices[i];
+        int n=p.size()-1;
+        int i=n;
+        if(n==0) return 0;
+        int mini=i;
+        int maxi=i;
+        i=i-1;
+        while(i>=0){
+            if(p[i]>p[maxi]){
+                maxi=i;
             }else{
-                ans=max(ans,l-prices[i]);
+                mini=i;
             }
+            if(mini<maxi){
+                ans=max(ans,p[maxi]-p[mini]);
+            }
+            i--;
         }
         return ans;
     }
